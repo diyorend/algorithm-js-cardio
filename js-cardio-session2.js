@@ -48,20 +48,20 @@ function chunkArray(arr, len) {
   // }
   // return chunkedArr;
   //Solution 2 -I did not understand
-  // //initialize array
-  // const chunkedArr = [];
-  // //loop through arr
-  // arr.forEach((val) => {
-  //   //ask last element
-  //   const last = chunkedArr[chunkedArr.length - 1];
-  //   //check last and  if last length is equal to the chunk len
-  //   if (!last || last.length === len) {
-  //     chunkedArr.push([val]);
-  //   } else {
-  //     last.push(val);
-  //   }
-  // });
-  // return chunkedArr;
+  //initialize array
+  const chunkedArr = [];
+  //loop through arr
+  arr.forEach((val) => {
+    //ask last element
+    const last = chunkedArr[chunkedArr.length - 1];
+    //check last and  if last length is equal to the chunk len
+    if (!last || last.length === len) {
+      chunkedArr.push([val]);
+    } else {
+      last.push(val);
+    }
+  });
+  return chunkedArr;
 }
 
 // CHALLENGE 3: FLATTEN ARRAY
@@ -74,7 +74,7 @@ function flattenArray(arrays) {
   //solution 2
   // return [].concat.apply([], arrays);
   //solution 3
-  // return [].concat(...arrays);
+  return [].concat(...arrays);
 }
 
 // CHALLENGE 4: ANAGRAM
@@ -95,15 +95,15 @@ function formatStr(str) {
 // ex. 'hello there' === 'Ifmmp UIfsf'
 
 function letterChanges(str) {
-  // let newStr = str.toLowerCase().replace(/[a-z]/gi, (char) => {
-  //   if (char === "z" || char === "Z") {
-  //     return "a";
-  //   } else {
-  //     return String.fromCharCode(char.charCodeAt() + 1);
-  //   }
-  // });
-  // newStr = newStr.replace(/a|e|i|o|u/gi, (vowel) => vowel.toUpperCase());
-  // return newStr;
+  let newStr = str.toLowerCase().replace(/[a-z]/gi, (char) => {
+    if (char === "z" || char === "Z") {
+      return "a";
+    } else {
+      return String.fromCharCode(char.charCodeAt() + 1);
+    }
+  });
+  newStr = newStr.replace(/a|e|i|o|u/gi, (vowel) => vowel.toUpperCase());
+  return newStr;
 }
 
 // Call Function

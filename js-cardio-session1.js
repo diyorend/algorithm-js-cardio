@@ -32,9 +32,9 @@ function reverseString(str) {
   // str.split("").forEach((element) => (revString = element + revString));
   // return revString;
   // PATH 6 - reduce() - more difficult high order array method
-  // return str
-  //   .split("")
-  //   .reduce((revString, character) => character + revString, "");
+  return str
+    .split("")
+    .reduce((revString, character) => character + revString, "");
 }
 
 // CHALLENGE 2: VALIDATE A PALINDROME
@@ -43,8 +43,8 @@ function reverseString(str) {
 // racecar, madam
 
 function isPalindrome(str) {
-  // const revString = str.split("").reverse().join("");
-  // return revString === str;
+  const revString = str.split("").reverse().join("");
+  return revString === str;
 }
 
 // CHALLENGE 3: REVERSE AN INTEGER
@@ -52,8 +52,8 @@ function isPalindrome(str) {
 // ex. reverseInt(521) === 125
 
 function reverseInt(int) {
-  // const revString = int.toString().split("").reverse().join("");
-  // return parseInt(revString) * Math.sign(int);
+  const revString = int.toString().split("").reverse().join("");
+  return parseInt(revString) * Math.sign(int);
 }
 
 // CHALLENGE 4: CAPITALIZE LETTERS
@@ -74,34 +74,34 @@ function capitalizeLetters(str) {
   //   .map((word) => word[0].toUpperCase() + word.substr(1))
   //   .join(" ");
   // PATH 3 - regular expression - not good
-  // return str
-  //   .toLowerCase()
-  //   .replace(/\b[a-z]/gi, (character) => character.toUpperCase());
+  return str
+    .toLowerCase()
+    .replace(/\b[a-z]/gi, (character) => character.toUpperCase());
 }
 
 // CHALLENGE 5: MAX CHARACTER
 // Return the character that is most common in a string
 // ex. maxCharacter('javascript') == 'a'
 function maxCharacter(str) {
-  // const characterMap = {};
-  // let maxNum = 0;
-  // let maxChar = "";
-  // str.split("").forEach((character) => {
-  //   if (characterMap[character]) {
-  //     characterMap[character]++;
-  //   } else {
-  //     characterMap[character] = 1;
-  //   }
-  // });
+  const characterMap = {};
+  let maxNum = 0;
+  let maxChar = "";
+  str.split("").forEach((character) => {
+    if (characterMap[character]) {
+      characterMap[character]++;
+    } else {
+      characterMap[character] = 1;
+    }
+  });
   // FOR IN loop - object method
-  // for (let character in characterMap) {
-  // debugger; // don't uncomment
-  //   if (characterMap[character] > maxNum) {
-  //     maxNum = characterMap[character];
-  //     maxChar = character;
-  //   }
-  // }
-  // return maxChar;
+  for (let character in characterMap) {
+    // debugger; // don't uncomment
+    if (characterMap[character] > maxNum) {
+      maxNum = characterMap[character];
+      maxChar = character;
+    }
+  }
+  return maxChar;
 }
 
 // CHALLENGE 6: FIZZBUZZ
